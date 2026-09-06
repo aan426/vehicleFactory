@@ -1,0 +1,24 @@
+## Architecture & Design
+
+We are designing a vehicle factory 
+Vehicles are made of 
+
+Automobile: 
+    engine: turns on/off
+    wheels: accelerates (engine must be on), turns the car (engine must be on)
+    break: decelerate
+Plane: 
+    engine: turns on/off
+    wings: ascend/descend (engine must be on), to take off wheels must be accelerating
+    wheels: accelerates
+    breaks: decelerate
+Train:
+    engine: turns on/off
+    wheels: accelerates (engine must be on)
+    breaks: decelerate
+
+Objective:
+    design a vehicle factory that:
+        creates the parts
+        assembles them
+        tests all functionality
