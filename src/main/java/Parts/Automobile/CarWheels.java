@@ -1,6 +1,6 @@
-package Practice.vehicleFactory.Parts.Automobile;
+package Practice.vehicleFactory.src.main.java.Parts.Automobile;
 
-import Practice.vehicleFactory.Parts.General.Wheels;
+import Practice.vehicleFactory.src.main.java.Parts.General.Wheels;
 
 public class CarWheels extends Wheels {
     private boolean isTurning;

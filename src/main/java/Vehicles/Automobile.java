@@ -1,8 +1,8 @@
-package Practice.vehicleFactory.Vehicles;
+package Practice.vehicleFactory.src.main.java.Vehicles;
 
-import Practice.vehicleFactory.Parts.General.Breaks;
-import Practice.vehicleFactory.Parts.General.Engine;
-import Practice.vehicleFactory.Parts.Automobile.CarWheels;
+import Practice.vehicleFactory.src.main.java.Parts.Automobile.CarWheels;
+import Practice.vehicleFactory.src.main.java.Parts.General.Breaks;
+import Practice.vehicleFactory.src.main.java.Parts.General.Engine;
 
 public class Automobile {
     private Breaks breaks;
@@ -12,6 +12,19 @@ public class Automobile {
         breaks = new Breaks();
         wheels = new CarWheels();
         engine = new Engine();
+    }
+
+    public boolean getEngineState(){
+        return engine.getIsEngineRunning();
+    }
+    public boolean getWheelsAccelState(){
+        return wheels.getIsAccelerating();
+    }
+    public boolean getWheelsTurningState(){
+        return wheels.getIsTurning();
+    }
+    public boolean getBreaksState(){
+        return breaks.getIsBraking();
     }
 
     public void startEngine() {
@@ -44,15 +57,15 @@ public class Automobile {
         }
     }
 
-    public void unTurnWheels() {
-        if(engine.getIsEngineRunning()) {
-            System.out.println("Straightening car wheels");
-            wheels.setIsTurning(false);
-        }
-        else{
-            System.out.println("Engine is not running, cannot turn wheels");
-        }
-    }
+    // public void unTurnWheels() {
+    //     if(engine.getIsEngineRunning()) {
+    //         System.out.println("Straightening car wheels");
+    //         wheels.setIsTurning(false);
+    //     }
+    //     else{
+    //         System.out.println("Engine is not running, cannot turn wheels");
+    //     }
+    // }
 
     public void decelerate(){
         System.out.println("Decelerating car");
