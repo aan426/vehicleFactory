@@ -3,7 +3,7 @@ package Practice.vehicleFactory.src.tests.java;
 import Practice.vehicleFactory.src.main.java.Vehicles.Automobile;
 
 
-public class CarFunctionTest extends GeneralTestFunctions{
+public class CarFunctionTest{
     public static void main(String[] args) {
         Automobile carSuccess = new Automobile();
         Automobile carFailure = new Automobile();
