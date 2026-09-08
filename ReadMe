@@ -10,7 +10,7 @@ Automobile:
 Plane: 
     engine: turns on/off
     wings: ascend/descend (engine must be on), to take off wheels must be accelerating
-    wheels: accelerates
+    wheels: accelerates (engine must be on)
     breaks: decelerate
 Train:
     engine: turns on/off
