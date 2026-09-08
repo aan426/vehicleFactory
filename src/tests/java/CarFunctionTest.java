@@ -21,14 +21,26 @@ public class CarFunctionTest{
         carSuccess.decelerate();
         testDecelerate(carSuccess);
 
+        carSuccess.stopEngine();
+        testStopEngine(carSuccess);
+
     
         System.out.println("\nCar 2:");
+        carSuccess.startEngine();
+        carSuccess.stopEngine();
         testStartEngine(carFailure);
+
         carFailure.accelerateWheels();
         testAccelerateWheels(carFailure);
+
         carFailure.turnWheels();
         testTurnWheels(carFailure);
+
+        carSuccess.decelerate();
         testDecelerate(carFailure);
+
+        carSuccess.stopEngine();
+        testStopEngine(carSuccess);
     }
 
     public static void testStartEngine(Automobile car) {
@@ -38,6 +50,16 @@ public class CarFunctionTest{
         }
         else{
             System.out.println("Car engine didn't start; Test failed");
+        }
+    }
+
+    public static void testStopEngine(Automobile car) {
+        // car.startEngine();
+        if(!car.getEngineState()){
+            System.out.println("Car engine succesfully stopped; Test success");
+        }
+        else{
+            System.out.println("Car engine didn't stop; Test failed");
         }
     }
 

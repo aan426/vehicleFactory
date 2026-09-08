@@ -7,7 +7,6 @@ public class Wheels {
         isAccelerating = false;
     }
     public void setIsAccelerating(boolean currentWheelState) {
-        System.out.println("Wheels are accelerating");
         isAccelerating = currentWheelState;
     }
 
