@@ -28,3 +28,5 @@ Compile from vehicleFactory/
 
 Run tests from vehicleFactory/
     java -cp bin Practice.vehicleFactory.src.tests.java.CarFunctionTest
+    java -cp bin Practice.vehicleFactory.src.tests.java.TrainFunctionTest
+    java -cp bin Practice.vehicleFactory.src.tests.java.PlaneFunctionTest
