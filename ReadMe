@@ -1,0 +1,32 @@
+## Architecture & Design
+
+We are designing a vehicle factory 
+Vehicles are made of 
+
+Automobile: 
+    engine: turns on/off
+    wheels: accelerates (engine must be on), turns the car (engine must be on)
+    break: decelerate
+Plane: 
+    engine: turns on/off
+    wings: ascend/descend (engine must be on), to take off wheels must be accelerating
+    wheels: accelerates (engine must be on)
+    breaks: decelerate
+Train:
+    engine: turns on/off
+    wheels: accelerates (engine must be on)
+    breaks: decelerate
+
+Objective:
+    design a vehicle factory that:
+        creates the parts
+        assembles them
+        tests all functionality
+
+Compile from vehicleFactory/
+    javac -d bin (Get-ChildItem -Recurse -Filter *.java).FullName
+
+Run tests from vehicleFactory/
+    java -cp bin Practice.vehicleFactory.src.tests.java.CarFunctionTest
+    java -cp bin Practice.vehicleFactory.src.tests.java.TrainFunctionTest
+    java -cp bin Practice.vehicleFactory.src.tests.java.PlaneFunctionTest
