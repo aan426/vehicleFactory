@@ -1,17 +1,37 @@
-package Practice.vehicleFactory.src.main.java.Parts.Automobile;
+package main.java.Parts.Automobile;
 
-import Practice.vehicleFactory.src.main.java.Parts.General.Wheels;
+import main.java.Parts.General.Wheels;
 
-public class CarWheels extends Wheels {
-    private boolean isTurning;
+
+
+public class CarWheels {
+
+    private FrontWheels frontWheels;
+    private RearWheels rearWheels;
+
     public CarWheels() {
-        super();
-        isTurning = false;
+        frontWheels = new FrontWheels();
+        rearWheels = new RearWheels();
     }
-    public void setIsTurning(boolean currentTurningState) {
-        isTurning = currentTurningState;
+
+    public FrontWheels getFrontWheels() {
+        return frontWheels;
     }
-    public boolean getIsTurning() {
-        return isTurning;
+
+    public RearWheels getRearWheels() {
+        return rearWheels;
     }
 }
+// public class CarWheels extends Wheels {
+//     private boolean isTurning;
+//     public CarWheels() {
+//         super();
+//         isTurning = false;
+//     }
+//     public void setIsTurning(boolean currentTurningState) {
+//         isTurning = currentTurningState;
+//     }
+//     public boolean getIsTurning() {
+//         return isTurning;
+//     }
+// }

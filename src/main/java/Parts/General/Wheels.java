@@ -1,16 +1,38 @@
-package Practice.vehicleFactory.src.main.java.Parts.General;
+package main.java.Parts.General;
+
 
 public class Wheels {
-    protected boolean isAccelerating;
+
+    private boolean isRolling;
+
     public Wheels() {
-        // System.out.println("Wheels created");
-        isAccelerating = false;
-    }
-    public void setIsAccelerating(boolean currentWheelState) {
-        isAccelerating = currentWheelState;
+        isRolling = false;
     }
 
-    public boolean getIsAccelerating() {
-        return isAccelerating;
+    public void roll() {
+        isRolling = true;
+    }
+
+    public void stopRolling() {
+        isRolling = false;
+    }
+
+    public boolean getIsRolling() {
+        return isRolling;
     }
 }
+
+// public class Wheels {
+//     protected boolean isAccelerating;
+//     public Wheels() {
+//         // System.out.println("Wheels created");
+//         isAccelerating = false;
+//     }
+//     public void setIsAccelerating(boolean currentWheelState) {
+//         isAccelerating = currentWheelState;
+//     }
+
+//     public boolean getIsAccelerating() {
+//         return isAccelerating;
+//     }
+// }

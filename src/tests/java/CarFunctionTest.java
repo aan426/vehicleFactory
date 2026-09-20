@@ -26,8 +26,8 @@ public class CarFunctionTest{
 
     
         System.out.println("\nCar 2:");
-        carSuccess.startEngine();
-        carSuccess.stopEngine();
+        carFailure.startEngine();
+        carFailure.stopEngine();
         testStartEngine(carFailure);
 
         carFailure.accelerateWheels();
@@ -36,11 +36,11 @@ public class CarFunctionTest{
         carFailure.turnWheels();
         testTurnWheels(carFailure);
 
-        carSuccess.decelerate();
+        carFailure.decelerate();
         testDecelerate(carFailure);
 
-        carSuccess.stopEngine();
-        testStopEngine(carSuccess);
+        carFailure.stopEngine();
+        testStopEngine(carFailure);
     }
 
     public static void testStartEngine(Automobile car) {

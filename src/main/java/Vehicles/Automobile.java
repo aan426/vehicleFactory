@@ -1,29 +1,37 @@
-package Practice.vehicleFactory.src.main.java.Vehicles;
+package main.java.Vehicles;
 
-import Practice.vehicleFactory.src.main.java.Parts.Automobile.CarWheels;
-import Practice.vehicleFactory.src.main.java.Parts.General.Breaks;
-import Practice.vehicleFactory.src.main.java.Parts.General.Engine;
+import main.java.Parts.Automobile.CarWheels;
+import main.java.Parts.General.Breaks;
+import main.java.Parts.General.Engine;
+import main.java.Parts.Automobile.DriveTrain;
 
 public class Automobile {
     private Breaks breaks;
     private CarWheels wheels;
+    private DriveTrain driveTrain;
     private Engine engine;
-    public Automobile() {
+
+    public Automobile(DriveTrain driveTrain) {
         breaks = new Breaks();
         wheels = new CarWheels();
         engine = new Engine();
+        this.driveTrain = driveTrain;
     }
 
-    public boolean getEngineState(){
+    public boolean getEngineState() {
         return engine.getIsEngineRunning();
     }
-    public boolean getWheelsAccelState(){
-        return wheels.getIsAccelerating();
+
+    public boolean getWheelsAccelState() {
+        return wheels.getFrontWheels().getIsRolling()
+            || wheels.getRearWheels().getIsRolling();
     }
-    public boolean getWheelsTurningState(){
-        return wheels.getIsTurning();
+
+    public boolean getWheelsTurningState() {
+        return wheels.getFrontWheels().getIsTurning();
     }
-    public boolean getBreaksState(){
+
+    public boolean getBreaksState() {
         return breaks.getIsBraking();
     }
 
@@ -38,38 +46,111 @@ public class Automobile {
     }
 
     public void accelerateWheels() {
+
         if (engine.getIsEngineRunning()) {
             System.out.println("Accelerating car wheels");
-            wheels.setIsAccelerating(true);
+            driveTrain.drive(wheels);
         }
-        else{
-            System.out.println("Engine is not running, cannot accelerate wheels");
-        } 
+        else {
+            System.out.println(
+                "Engine is not running, cannot accelerate wheels"
+            );
+        }
     }
 
     public void turnWheels() {
-        if(engine.getIsEngineRunning()) {
+
+        if (engine.getIsEngineRunning()) {
             System.out.println("Turning car wheels");
-            wheels.setIsTurning(true);
+            wheels.getFrontWheels().turn();
         }
-        else{
-            System.out.println("Engine is not running, cannot turn wheels");
+        else {
+            System.out.println(
+                "Engine is not running, cannot turn wheels"
+            );
         }
     }
 
-    // public void unTurnWheels() {
+    public void decelerate() {
+
+        System.out.println("Decelerating car");
+
+        wheels.getFrontWheels().stopRolling();
+        wheels.getRearWheels().stopRolling();
+
+        breaks.setIsBraking(true);
+    }
+
+
+
+    // private Breaks breaks;
+    // // private CarWheels wheels;
+    // private DriveTrain driveTrain;
+    // private Engine engine;
+    // public Automobile(DriveTrain driveTrain) {
+    //     breaks = new Breaks();
+    //     // wheels = new CarWheels();
+    //     engine = new Engine();
+    //     this.driveTrain = driveTrain;
+
+    // }
+
+    // public boolean getEngineState(){
+    //     return engine.getIsEngineRunning();
+    // }
+    // public boolean getWheelsAccelState(){
+    //     return wheels.getIsAccelerating();
+    // }
+    // public boolean getWheelsTurningState(){
+    //     return wheels.getIsTurning();
+    // }
+    // public boolean getBreaksState(){
+    //     return breaks.getIsBraking();
+    // }
+
+    // public void startEngine() {
+    //     System.out.println("Starting car engine");
+    //     engine.setIsEngineRunning(true);
+    // }
+
+    // public void stopEngine() {
+    //     System.out.println("Stopping car engine");
+    //     engine.setIsEngineRunning(false);
+    // }
+
+    // public void accelerateWheels() {
+    //     if (engine.getIsEngineRunning()) {
+    //         System.out.println("Accelerating car wheels");
+    //         wheels.setIsAccelerating(true);
+    //     }
+    //     else{
+    //         System.out.println("Engine is not running, cannot accelerate wheels");
+    //     } 
+    // }
+
+    // public void turnWheels() {
     //     if(engine.getIsEngineRunning()) {
-    //         System.out.println("Straightening car wheels");
-    //         wheels.setIsTurning(false);
+    //         System.out.println("Turning car wheels");
+    //         wheels.setIsTurning(true);
     //     }
     //     else{
     //         System.out.println("Engine is not running, cannot turn wheels");
     //     }
     // }
 
-    public void decelerate(){
-        System.out.println("Decelerating car");
-        wheels.setIsAccelerating(false);
-        breaks.setIsBraking(true);
-    }
+    // // public void unTurnWheels() {
+    // //     if(engine.getIsEngineRunning()) {
+    // //         System.out.println("Straightening car wheels");
+    // //         wheels.setIsTurning(false);
+    // //     }
+    // //     else{
+    // //         System.out.println("Engine is not running, cannot turn wheels");
+    // //     }
+    // // }
+
+    // public void decelerate(){
+    //     System.out.println("Decelerating car");
+    //     wheels.setIsAccelerating(false);
+    //     breaks.setIsBraking(true);
+    // }
 }
