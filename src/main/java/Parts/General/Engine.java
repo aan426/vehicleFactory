@@ -1,25 +1,21 @@
-package Practice.vehicleFactory.src.main.java.Parts.General;
+package main.java.Parts.General;
 
 public class Engine {
     private boolean isRunning;
+
     public Engine() {
-        // System.out.println("Engine created");
         isRunning = false;
     }
-    // private void turnOn() {
-    //     System.out.println("Engine turned on");
-    //     isRunning = true;
-    // }
-    // private void turnOff() {
-    //     System.out.println("Engine turned off");
-    //     isRunning = false;
-    // }
 
-    public boolean getIsEngineRunning() {
-        return isRunning;
+    public void turnOn() {
+        isRunning = true;
     }
 
-    public void setIsEngineRunning(boolean currentState) {
-        isRunning = currentState;
+    public void turnOff() {
+        isRunning = false;
+    }
+
+    public boolean isRunning() {
+        return isRunning;
     }
 }

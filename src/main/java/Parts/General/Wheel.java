@@ -1,24 +1,23 @@
 package main.java.Parts.General;
 
 
-public class Wheels {
+public class Wheel {
+    private boolean isRotating;
 
-    private boolean isRolling;
-
-    public Wheels() {
-        isRolling = false;
+    public Wheel() {
+        isRotating = false;
     }
 
-    public void roll() {
-        isRolling = true;
+    public void rotate() {
+        isRotating = true;
     }
 
-    public void stopRolling() {
-        isRolling = false;
+    public void stop() {
+        isRotating = false;
     }
 
-    public boolean getIsRolling() {
-        return isRolling;
+    public boolean isRotating() {
+        return isRotating;
     }
 }
 

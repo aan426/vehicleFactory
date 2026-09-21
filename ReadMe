@@ -30,3 +30,23 @@ Run tests from vehicleFactory/
     java -cp bin Practice.vehicleFactory.src.tests.java.CarFunctionTest
     java -cp bin Practice.vehicleFactory.src.tests.java.TrainFunctionTest
     java -cp bin Practice.vehicleFactory.src.tests.java.PlaneFunctionTest
+
+
+IAutomobile
+    │
+    ├── FrontWheelDriveAutomobile
+    │       ├── Automobile parts
+    │       ├── frontLeftWheelPower
+    │       └── frontRightWheelPower
+    │
+    ├── RearWheelDriveAutomobile
+    │       ├── Automobile parts
+    │       ├── backLeftWheelPower
+    │       └── backRightWheelPower
+    │
+    └── AllWheelDriveAutomobile
+            ├── Automobile parts
+            ├── frontLeftWheelPower
+            ├── frontRightWheelPower
+            ├── backLeftWheelPower
+            └── backRightWheelPower
